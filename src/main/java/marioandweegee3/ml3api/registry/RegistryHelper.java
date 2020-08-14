@@ -109,7 +109,7 @@ public final class RegistryHelper {
      * @param item The {@link Item}
      */
     public void registerItem(String name, Item item){
-        Registry.ITEM.add(makeId(name), item);
+        Registry.register(Registry.ITEM, makeId(name), item);
     }
 
     /**
@@ -120,7 +120,7 @@ public final class RegistryHelper {
      */
     public void registerBlock(String name, Block block, ItemGroup group){
         registerItem(name, new BlockItem(block, new Item.Settings().group(group)));
-        Registry.BLOCK.add(makeId(name), block);
+        Registry.register(Registry.BLOCK, makeId(name), block);
     }
 
     /**
@@ -129,7 +129,7 @@ public final class RegistryHelper {
      * @param type The {@link BlockEntityType}
      */
     public void registerBlockEntity(String name, BlockEntityType<?> type){
-        Registry.register(Registry.BLOCK_ENTITY, makeId(name), type);
+        Registry.register(Registry.BLOCK_ENTITY_TYPE, makeId(name), type);
     }
 
     /**
